@@ -1,9 +1,9 @@
 //
 //  AppDelegate.h
-//  VKApp
+//  navigation
 //
-//  Created by Антон  Смирнов on 19.10.16.
-//  Copyright © 2016 Антон  Смирнов. All rights reserved.
+//  Created by Антон  Смирнов on 03.10.16.
+//  Copyright © 2016 Anton Smirnov. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
