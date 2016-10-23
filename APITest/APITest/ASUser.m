@@ -16,13 +16,19 @@
     if (self) {
         self.firstName = [responseObject objectForKey:@"first_name"];
         self.lastName = [responseObject objectForKey:@"last_name"];
-        self.online = [responseObject objectForKey:@"online"];
+        //self.online = [responseObject objectForKey:@"online"];
+        self.online = [responseObject[@"online"] isEqual:@true] ? true : false;
         NSString* urlString = [responseObject objectForKey:@"photo_100"];
+        //self.imageURL = ([responseObject[@"photo_100"] isEqual:[NSNull null]]) ? nil : responseObject[@"photo_100"];
+        
         
         if(urlString) {
             self.imageURL = [NSURL URLWithString:urlString];
-        } 
+        }
+         
+        
     }
+         
     return self;
 }
 

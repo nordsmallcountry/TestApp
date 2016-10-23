@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		5F40A3741DBC718B00EE6BC9 /* ASLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F40A3731DBC718B00EE6BC9 /* ASLoginViewController.m */; };
 		5F40A3771DBC74B400EE6BC9 /* ASAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F40A3761DBC74B400EE6BC9 /* ASAccessToken.m */; };
-		5F40A41C1DBCF28600EE6BC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F40A4181DBCF28600EE6BC9 /* LaunchScreen.storyboard */; };
-		5F40A41D1DBCF28600EE6BC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F40A41A1DBCF28600EE6BC9 /* Main.storyboard */; };
 		5F559C9B1DBB0788009C55C6 /* ASUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F559C9A1DBB0788009C55C6 /* ASUser.m */; };
 		5F559CC11DBBFECD009C55C6 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F559C9F1DBBFECD009C55C6 /* AFHTTPRequestOperation.m */; };
 		5F559CC21DBBFECD009C55C6 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F559CA11DBBFECD009C55C6 /* AFHTTPRequestOperationManager.m */; };
@@ -36,6 +34,10 @@
 		5F6AD2131DB9D9410022B7F0 /* APITestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6AD2121DB9D9410022B7F0 /* APITestUITests.m */; };
 		5F6AD2551DB9E92E0022B7F0 /* ASServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6AD2541DB9E92E0022B7F0 /* ASServerManager.m */; };
 		5F6C787E1DBD4A58002C2F7F /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6C787D1DBD4A58002C2F7F /* FirstViewController.m */; };
+		5FF4DF051DBD4EB300E7C091 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FF4DF031DBD4EB300E7C091 /* LaunchScreen.storyboard */; };
+		5FF4DF061DBD4EB300E7C091 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FF4DF041DBD4EB300E7C091 /* Main.storyboard */; };
+		5FF4DF0A1DBD50C700E7C091 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF4DF081DBD50C700E7C091 /* CustomCell.m */; };
+		5FF4DF0B1DBD50C700E7C091 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF4DF091DBD50C700E7C091 /* CustomCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,8 +62,6 @@
 		5F40A3731DBC718B00EE6BC9 /* ASLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASLoginViewController.m; sourceTree = "<group>"; };
 		5F40A3751DBC74B400EE6BC9 /* ASAccessToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASAccessToken.h; sourceTree = "<group>"; };
 		5F40A3761DBC74B400EE6BC9 /* ASAccessToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASAccessToken.m; sourceTree = "<group>"; };
-		5F40A4191DBCF28600EE6BC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		5F40A41B1DBCF28600EE6BC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		5F559C991DBB0787009C55C6 /* ASUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASUser.h; sourceTree = "<group>"; };
 		5F559C9A1DBB0788009C55C6 /* ASUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASUser.m; sourceTree = "<group>"; };
 		5F559C9E1DBBFECD009C55C6 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -116,6 +116,11 @@
 		5F6AD2541DB9E92E0022B7F0 /* ASServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASServerManager.m; sourceTree = "<group>"; };
 		5F6C787C1DBD4A58002C2F7F /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		5F6C787D1DBD4A58002C2F7F /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		5FF4DF031DBD4EB300E7C091 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5FF4DF041DBD4EB300E7C091 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5FF4DF071DBD50C700E7C091 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		5FF4DF081DBD50C700E7C091 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
+		5FF4DF091DBD50C700E7C091 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,8 +251,11 @@
 				5F40A3761DBC74B400EE6BC9 /* ASAccessToken.m */,
 				5F40A3721DBC718B00EE6BC9 /* ASLoginViewController.h */,
 				5F40A3731DBC718B00EE6BC9 /* ASLoginViewController.m */,
-				5F40A4181DBCF28600EE6BC9 /* LaunchScreen.storyboard */,
-				5F40A41A1DBCF28600EE6BC9 /* Main.storyboard */,
+				5FF4DF071DBD50C700E7C091 /* CustomCell.h */,
+				5FF4DF081DBD50C700E7C091 /* CustomCell.m */,
+				5FF4DF091DBD50C700E7C091 /* CustomCell.xib */,
+				5FF4DF031DBD4EB300E7C091 /* LaunchScreen.storyboard */,
+				5FF4DF041DBD4EB300E7C091 /* Main.storyboard */,
 				5F40A4171DBCF28600EE6BC9 /* Base.lproj */,
 				5F6AD1F91DB9D9400022B7F0 /* Assets.xcassets */,
 				5F6AD1FE1DB9D9410022B7F0 /* Info.plist */,
@@ -389,9 +397,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F40A41D1DBCF28600EE6BC9 /* Main.storyboard in Resources */,
-				5F40A41C1DBCF28600EE6BC9 /* LaunchScreen.storyboard in Resources */,
+				5FF4DF061DBD4EB300E7C091 /* Main.storyboard in Resources */,
 				5F6AD1FA1DB9D9400022B7F0 /* Assets.xcassets in Resources */,
+				5FF4DF0B1DBD50C700E7C091 /* CustomCell.xib in Resources */,
+				5FF4DF051DBD4EB300E7C091 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +439,7 @@
 				5F559CCE1DBBFECD009C55C6 /* UIImageView+AFNetworking.m in Sources */,
 				5F559C9B1DBB0788009C55C6 /* ASUser.m in Sources */,
 				5F559CCC1DBBFECD009C55C6 /* UIAlertView+AFNetworking.m in Sources */,
+				5FF4DF0A1DBD50C700E7C091 /* CustomCell.m in Sources */,
 				5F559CC21DBBFECD009C55C6 /* AFHTTPRequestOperationManager.m in Sources */,
 				5F559CC51DBBFECD009C55C6 /* AFSecurityPolicy.m in Sources */,
 				5F6AD1EF1DB9D9400022B7F0 /* main.m in Sources */,
@@ -473,27 +483,6 @@
 			targetProxy = 5F6AD20F1DB9D9410022B7F0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		5F40A4181DBCF28600EE6BC9 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5F40A4191DBCF28600EE6BC9 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			path = /Users/antonsmirnov/Downloads/apitestnavigation/APITest/APITest/Base.lproj;
-			sourceTree = "<absolute>";
-		};
-		5F40A41A1DBCF28600EE6BC9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5F40A41B1DBCF28600EE6BC9 /* Base */,
-			);
-			name = Main.storyboard;
-			path = /Users/antonsmirnov/Downloads/apitestnavigation/APITest/APITest/Base.lproj;
-			sourceTree = "<absolute>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5F6AD2151DB9D9410022B7F0 /* Debug */ = {

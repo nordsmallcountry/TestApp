@@ -14,7 +14,7 @@
 
 @property (strong, nonatomic) NSString* lastName;
 
-@property (strong, nonatomic) NSString* online;
+@property (assign, nonatomic) BOOL online;
 
 @property (strong, nonatomic) NSURL* imageURL;
 

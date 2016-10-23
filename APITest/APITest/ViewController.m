@@ -10,6 +10,7 @@
 #import "ASServerManager.h"
 #import "ASUser.h"
 #import "UIImageView+AFNetworking.h"
+#import "CustomCell.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,8 @@
 @property (assign, nonatomic) BOOL firstTimeAppear;
 
 @end
+
+static NSString* identifierCell = @"CustomCell";
 
 @implementation ViewController
 
@@ -28,8 +31,13 @@
     
     //
     self.firstTimeAppear = YES;
+    
 }
-
+- (void) configTable {
+    
+    [self.tableView registerNib:[UINib nibWithNibName:identifierCell bundle:nil] forCellReuseIdentifier:identifierCell];
+    self.tableView.tableFooterView = [UIView new];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -104,22 +112,25 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString* identifier = @"Cell";
+    //static NSString* identifier = @"Cell";
     
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    
+    CustomCell* cell = [tableView dequeueReusableCellWithIdentifier:identifierCell];
     
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: identifier ];
+        cell = [[CustomCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: identifierCell ];
     }
     
     ASUser* friend = [self.friendsArray objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@ %@", friend.firstName, friend.lastName, friend.online];
+    [cell setCustomCellWith:friend];
+    
+    //cell.textLabel.text = [NSString stringWithFormat:@"%@ %@ %@", friend.firstName, friend.lastName, friend.online];
     
     
-    NSURLRequest* request = [NSURLRequest requestWithURL:friend.imageURL];
+    //NSURLRequest* request = [NSURLRequest requestWithURL:friend.imageURL];
     
-
+     /*
      __weak UITableViewCell* weakCell = cell;
     
     [cell.imageView setImageWithURLRequest:request
@@ -132,6 +143,7 @@
                                    failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
                                      
                                    }];
+     */
     
     return cell;
 }

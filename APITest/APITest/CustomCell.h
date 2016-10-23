@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ViewController.h"
+@class ASUser;
 
 @interface CustomCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *avatar;
+@property (weak, nonatomic) IBOutlet UIView *onlineView;
 
-//- (void) setLabel;
-
+- (void) setCustomCellWith: (ASUser*) user;
 @end
