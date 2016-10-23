@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5F40A3741DBC718B00EE6BC9 /* ASLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F40A3731DBC718B00EE6BC9 /* ASLoginViewController.m */; };
 		5F40A3771DBC74B400EE6BC9 /* ASAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F40A3761DBC74B400EE6BC9 /* ASAccessToken.m */; };
-		5F40A4161DBCF24000EE6BC9 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F40A4151DBCF24000EE6BC9 /* FirstViewController.m */; };
 		5F40A41C1DBCF28600EE6BC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F40A4181DBCF28600EE6BC9 /* LaunchScreen.storyboard */; };
 		5F40A41D1DBCF28600EE6BC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F40A41A1DBCF28600EE6BC9 /* Main.storyboard */; };
 		5F559C9B1DBB0788009C55C6 /* ASUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F559C9A1DBB0788009C55C6 /* ASUser.m */; };
@@ -36,6 +35,7 @@
 		5F6AD2081DB9D9410022B7F0 /* APITestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6AD2071DB9D9410022B7F0 /* APITestTests.m */; };
 		5F6AD2131DB9D9410022B7F0 /* APITestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6AD2121DB9D9410022B7F0 /* APITestUITests.m */; };
 		5F6AD2551DB9E92E0022B7F0 /* ASServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6AD2541DB9E92E0022B7F0 /* ASServerManager.m */; };
+		5F6C787E1DBD4A58002C2F7F /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6C787D1DBD4A58002C2F7F /* FirstViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,8 +60,6 @@
 		5F40A3731DBC718B00EE6BC9 /* ASLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASLoginViewController.m; sourceTree = "<group>"; };
 		5F40A3751DBC74B400EE6BC9 /* ASAccessToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASAccessToken.h; sourceTree = "<group>"; };
 		5F40A3761DBC74B400EE6BC9 /* ASAccessToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASAccessToken.m; sourceTree = "<group>"; };
-		5F40A4141DBCF24000EE6BC9 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstViewController.h; path = ../../../Users/antonsmirnov/Downloads/apitestnavigation/APITest/APITest/FirstViewController.h; sourceTree = "<group>"; };
-		5F40A4151DBCF24000EE6BC9 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstViewController.m; path = ../../../Users/antonsmirnov/Downloads/apitestnavigation/APITest/APITest/FirstViewController.m; sourceTree = "<group>"; };
 		5F40A4191DBCF28600EE6BC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F40A41B1DBCF28600EE6BC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		5F559C991DBB0787009C55C6 /* ASUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASUser.h; sourceTree = "<group>"; };
@@ -116,6 +114,8 @@
 		5F6AD2141DB9D9410022B7F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F6AD2531DB9E92E0022B7F0 /* ASServerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASServerManager.h; sourceTree = "<group>"; };
 		5F6AD2541DB9E92E0022B7F0 /* ASServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASServerManager.m; sourceTree = "<group>"; };
+		5F6C787C1DBD4A58002C2F7F /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		5F6C787D1DBD4A58002C2F7F /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,8 +234,8 @@
 				5F559C9C1DBBFECD009C55C6 /* Libs */,
 				5F6AD1F01DB9D9400022B7F0 /* AppDelegate.h */,
 				5F6AD1F11DB9D9400022B7F0 /* AppDelegate.m */,
-				5F40A4141DBCF24000EE6BC9 /* FirstViewController.h */,
-				5F40A4151DBCF24000EE6BC9 /* FirstViewController.m */,
+				5F6C787C1DBD4A58002C2F7F /* FirstViewController.h */,
+				5F6C787D1DBD4A58002C2F7F /* FirstViewController.m */,
 				5F6AD1F31DB9D9400022B7F0 /* ViewController.h */,
 				5F6AD1F41DB9D9400022B7F0 /* ViewController.m */,
 				5F6AD2531DB9E92E0022B7F0 /* ASServerManager.h */,
@@ -423,7 +423,7 @@
 				5F559CCF1DBBFECD009C55C6 /* UIProgressView+AFNetworking.m in Sources */,
 				5F559CC91DBBFECD009C55C6 /* AFURLSessionManager.m in Sources */,
 				5F559CC71DBBFECD009C55C6 /* AFURLRequestSerialization.m in Sources */,
-				5F40A4161DBCF24000EE6BC9 /* FirstViewController.m in Sources */,
+				5F6C787E1DBD4A58002C2F7F /* FirstViewController.m in Sources */,
 				5F6AD1F51DB9D9400022B7F0 /* ViewController.m in Sources */,
 				5F559CC81DBBFECD009C55C6 /* AFURLResponseSerialization.m in Sources */,
 				5F6AD1F21DB9D9400022B7F0 /* AppDelegate.m in Sources */,
