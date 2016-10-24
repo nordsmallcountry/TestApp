@@ -24,25 +24,31 @@ static NSString* identifierCell = @"CustomCell";
 @implementation ViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
     self.friendsArray = [NSMutableArray array];
     
-    //
     self.firstTimeAppear = YES;
     
+    [self configTable];
 }
+
+
 - (void) configTable {
     
     [self.tableView registerNib:[UINib nibWithNibName:identifierCell bundle:nil] forCellReuseIdentifier:identifierCell];
     self.tableView.tableFooterView = [UIView new];
 }
 
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated ];
@@ -55,15 +61,12 @@ static NSString* identifierCell = @"CustomCell";
             NSLog(@"%@ %@", user.firstName, user.lastName);
             [self getFriendsFromServer];
             //
-
         }];
-        
     }
     
-
-    
-   
 }
+
+
 
 
 #pragma mark - API
@@ -98,7 +101,6 @@ static NSString* identifierCell = @"CustomCell";
                NSLog(@"error = %@, code = %ld", [error localizedDescription], statusCode);
      }];
      
-    
 }
 
 #pragma mark - UITableViewDataSource
@@ -122,6 +124,7 @@ static NSString* identifierCell = @"CustomCell";
     }
     
     ASUser* friend = [self.friendsArray objectAtIndex:indexPath.row];
+    NSLog(@"%@", friend.firstName);
     
     [cell setCustomCellWith:friend];
     

@@ -30,15 +30,19 @@
     
     self.onlineView.layer.cornerRadius = CGRectGetWidth(self.onlineView.frame) / 2;
     
-    self.avatar.clipsToBounds = YES;
+    self.avatar.clipsToBounds = YES;      
     
     self.onlineView.clipsToBounds = YES;
     
+    
+    
     if(!user.online) {
         
-        self.onlineView.hidden = YES;
         
-    }
+       self.onlineView.hidden = YES;
+        
+        
+    } else self.onlineView.hidden = NO;
     if (user.imageURL !=nil) {
     
         NSURLRequest* request = [NSURLRequest requestWithURL:user.imageURL];

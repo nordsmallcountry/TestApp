@@ -18,7 +18,7 @@
         self.lastName = [responseObject objectForKey:@"last_name"];
         //self.online = [responseObject objectForKey:@"online"];
         self.online = [responseObject[@"online"] isEqual:@true] ? true : false;
-        NSString* urlString = [responseObject objectForKey:@"photo_100"];
+        NSString* urlString = [responseObject objectForKey:@"photo_50"];
         //self.imageURL = ([responseObject[@"photo_100"] isEqual:[NSNull null]]) ? nil : responseObject[@"photo_100"];
         
         

@@ -142,7 +142,7 @@ static NSString* userGlobalID = @"123";
      @"name", @"order",
      @(count), @"count",
      @(offset), @"offset",
-     @"photo_100, online", @"fields",nil];
+     @"photo_50, online", @"fields",nil];
     
     
     [self.requestOperationManager GET:@"friends.get" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary*  responseObject) {
@@ -168,6 +168,7 @@ static NSString* userGlobalID = @"123";
         
         if(failure) {
             failure(error, operation.response.statusCode);
+            NSLog(@"ITS FAIL BRO!");
         }
     }];
     
