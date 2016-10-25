@@ -11,6 +11,7 @@
 #import "ASUser.h"
 #import "UIImageView+AFNetworking.h"
 #import "CustomCell.h"
+#import "UIImageView+WebCache.h"
 
 @interface ViewController ()
 
@@ -125,28 +126,10 @@ static NSString* identifierCell = @"CustomCell";
     
     ASUser* friend = [self.friendsArray objectAtIndex:indexPath.row];
     NSLog(@"%@", friend.firstName);
-    
+
     [cell setCustomCellWith:friend];
     
-    //cell.textLabel.text = [NSString stringWithFormat:@"%@ %@ %@", friend.firstName, friend.lastName, friend.online];
     
-    
-    //NSURLRequest* request = [NSURLRequest requestWithURL:friend.imageURL];
-    
-     /*
-     __weak UITableViewCell* weakCell = cell;
-    
-    [cell.imageView setImageWithURLRequest:request
-                          placeholderImage: nil
-                                   success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-                                       weakCell.imageView.image = image;
-                                       [weakCell layoutSubviews];
-                                       weakCell.imageView.layer.cornerRadius = cell.imageView.frame.size.width / 2.0;
-                                   }
-                                   failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
-                                     
-                                   }];
-     */
     
     return cell;
 }
