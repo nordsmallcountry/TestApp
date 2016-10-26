@@ -31,24 +31,25 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-    CGRect r = self.view.bounds;
+    CGRect r = self.view.bounds;  //bounds - зона самого view, r - объект с возможностью задания границ
     
-    r.origin = CGPointZero;
+    r.origin = CGPointMake(0, 0);
     
-    UIWebView* webView = [[UIWebView alloc] initWithFrame:r];
+    UIWebView* webView1 = [[UIWebView alloc] initWithFrame:r]; //объявляем объект webview с заданными границами
     
-    webView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    webView1.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     
-    [self.view addSubview:webView];
+    [self.view addSubview:webView1]; //добавляем в зону view элемент webView
     
-    self.webView = webView;
+    self.webView = webView1; //Н.О устанавливаем значение property webView текущего класса равным новоиспеченному объекту
     
     UIBarButtonItem* item = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                          target:self
                                                                          action:@selector(actionCancel:)];
-    [self.navigationItem setRightBarButtonItem:item animated:NO];
+    //объявляем инициализируем объект для создания кнопки cancel  и при нажатии на эту кнопку вызываем метод actionCancel, который убирает текущий viewcontroller и Н. О обнуляет CompletionBlock
+    
+    [self.navigationItem setRightBarButtonItem:item animated:NO]; //на панели навигации uinavigationcontroller устанавливаем нашу кнопку cancel
     
     self.navigationItem.title = @"Login";
     
@@ -59,33 +60,34 @@
     "redirect_uri=hello.there&"
     "display=mobile&"
     "V=5.59&"
-    "response_type=token&revoke=1" ;
+    "response_type=token&revoke=1" ; //переменная с запросом для получения токена
     
     NSURL* url = [NSURL URLWithString:urlString];
     
     NSURLRequest* request = [NSURLRequest requestWithURL:url];
     
+    [webView1 loadRequest:request]; //выполняет добавление webview данными согласно запросу
     
-    webView.delegate = self;
-    
-    [webView loadRequest:request];
+     webView1.delegate = self; //передает управление методу в протоколе uiwebviewdelegate - реализует показ самого webview
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 #pragma mark - Actions
 
 - (void) actionCancel:(UIBarButtonItem*) item {
     
+    /*
     if (self.completionBlock){
         
         self.completionBlock(nil);
         
     }
+     */
     
     [self dismissViewControllerAnimated:YES
                              completion:nil];
@@ -95,50 +97,53 @@
     self.webView.delegate = nil;
 }
 
+
 #pragma mark - UIWebViewDelegate
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType { //стартовый экран и дальнейшие действия
     
-    if ([[[request URL] host] isEqualToString:@"hello.there"]) {
+        if ([[[request URL] host] isEqualToString:@"hello.there"]) { //если редирект  равен hello.there
         
-        ASAccessToken* token = [[ASAccessToken alloc] init];
+        ASAccessToken* token = [[ASAccessToken alloc] init]; //объявляем объект token класса ACAcess.., у которого есть три properties
         
         NSString* query = [[request URL] description];
         
-        NSArray* array = [query componentsSeparatedByString:@"#"];
+        NSArray* array = [query componentsSeparatedByString:@"#"]; //инициализируем массив array и заполняем его элементами, разделенными знаком #
         
-        if ([array count] > 1) {
-            query = [array lastObject];
+        if ([array count] > 1) { //если элементов в массиве больше одного
+          query = [array lastObject]; // присваеваем объекту query значение последнего элемента массива array
         }
         
         
-        NSArray* pairs = [query componentsSeparatedByString:@"&"];
+        NSArray* pairs = [query componentsSeparatedByString:@"&"]; //заполняем массив элементами,разделенными знаком &
         
-        for (NSString* pair in pairs) {
+        
+        
+        for (NSString* pair in pairs) {//строку pair, до этого разделенную знаком &
             
-            NSArray* values = [pair componentsSeparatedByString:@"="];
+            NSArray* values = [pair componentsSeparatedByString:@"="];//разделяем ее знаком = и заносим в массив разделенные элементы
             
-            if ([values count] == 2) {
+            if ([values count] == 2) { //если таких элементов в массиве ровно 2
                 
-                NSString* key = [values firstObject];
-                if ([key isEqualToString:@"access_token"]) {
-                    token.token = [values lastObject];
+                NSString* key = [values firstObject];//копируем первый элемент
+                if ([key isEqualToString:@"access_token"]) {//и если он равен "access_token"
+                    token.token = [values lastObject];//сохраняем токен
                     
                 } else if ([key isEqualToString:@"expires_in"]) {
                     
-                    NSTimeInterval interval = [[values lastObject] doubleValue];
+                    NSTimeInterval interval = [[values lastObject] doubleValue];//
                     
-                    token.expirationDate = [NSDate dateWithTimeIntervalSinceNow:interval];
+                    token.expirationDate = [NSDate dateWithTimeIntervalSinceNow:interval];//сохраняем время действия токена
                 } else if ([key isEqualToString:@"user_id"]) {
                     
-                    token.userID = [values lastObject];
-                    //userGlobalID = [values lastObject];
+                    token.userID = [values lastObject];//сохраняем ID пользователя
+                    
                 }
                 
-            }
-        }
+             }
+         }
         
-        self.webView.delegate = nil;
+        self.webView.delegate = nil;//останавливает передачу управления по делегату
         
         if (self.completionBlock){
             
@@ -147,12 +152,12 @@
         }
         
         [self dismissViewControllerAnimated:YES
-                                 completion:nil];
+                                 completion:nil]; //убирает asloginviewcontroller
         
         
-        return NO;
+         return NO;
         
-    }
+        }
     return YES;
 }
 
