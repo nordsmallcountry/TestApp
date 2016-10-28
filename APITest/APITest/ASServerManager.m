@@ -11,6 +11,9 @@
 #import "ASUser.h"
 #import "ASLoginViewController.h"
 #import "ASAccessToken.h"
+#import "ViewController.h"
+#import "ID.h"
+#import "ASAccessToken.h"
 
 static NSString* userGlobalID = @"123";
 
@@ -142,11 +145,13 @@ static NSString* userGlobalID = @"123";
      @"name", @"order",
      @(count), @"count",
      @(offset), @"offset",
-     @"photo_50, online", @"fields",nil];
+     @"photo_50, online", @"fields",
+     [ASAccessToken sharedToken].token, @"access_token",nil];
     
-    
+   
     [self.requestOperationManager GET:@"friends.get" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary*  responseObject) {
         NSLog(@"JSON: %@", responseObject);
+       // NSLog(@"THIS IS USER ID!!!!%@", [responseObject objectForKey:@"first_name"]);
         
         NSArray* dictsArray = [responseObject objectForKey:@"response"];
         
@@ -159,7 +164,7 @@ static NSString* userGlobalID = @"123";
         }
         
         if(success) {
-            success(objectsArray);
+            success(objectsArray);//отправляем массив юзеров на уровень выше, таким образом сообщая, что программа выполнилась
         }
         
         
@@ -174,5 +179,66 @@ static NSString* userGlobalID = @"123";
     
 }
 
+
+
+
+
+
+
+
+- (void) getPhotosWithOffset:(NSInteger) offset
+                        count:(NSInteger) count
+                    onSuccess: (void(^)(NSArray* photos)) success
+                    onFailure: (void(^)(NSError* error, NSInteger statusCode)) failure {
+    
+    NSDictionary* params =
+    [NSDictionary dictionaryWithObjectsAndKeys:
+     [ID sharedID].idToCollection, @"owner_id",
+     @"0", @"extended",
+     @(offset), @"offset",
+     @(count), @"count",
+     @"0", @"photo_sizes",
+     @"0", @"no_service_albums",
+     @"0", @"need_hidden",
+     @"1", @"skip_hidden",
+     [ASAccessToken sharedToken].token, @"access_token",nil];
+    
+    
+    [self.requestOperationManager GET:@"photos.getAll" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary*  responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        //NSString* dataString = [NSString stringWithFormat:@"%@",responseObject];
+        //NSString* jsonString = [dataString stringByReplacingOccurrencesOfString:@"response =     (                                3," withString:@"("];
+        
+        //NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+        
+        //NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers | NSJSONReadingAllowFragments error:nil];
+        
+        NSArray* dictResponse = [responseObject objectForKey:@"response"];
+        
+        NSMutableArray* resp = [NSMutableArray arrayWithArray:dictResponse];
+        [resp removeObjectAtIndex:0];
+        
+        
+        NSMutableArray* objectsArray = [NSMutableArray array];
+        
+        for (NSDictionary* dict in resp) {
+            
+            ASUser* user = [[ASUser alloc]initWithServerResponse2:dict];
+            [objectsArray addObject:user];
+        }
+        
+        if(success) {
+            success(objectsArray);
+        }
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        NSLog(@"Error: %@", error);
+        
+        if(failure) {
+            failure(error, operation.response.statusCode);
+            NSLog(@"ITS FAIL BRO!");
+        }
+    }];
+    
+}
 
 @end

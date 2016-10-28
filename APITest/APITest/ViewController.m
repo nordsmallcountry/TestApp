@@ -12,6 +12,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "CustomCell.h"
 #import "UIImageView+WebCache.h"
+#import "ID.h"
 
 @interface ViewController ()
 
@@ -42,6 +43,9 @@ static NSString* identifierCell = @"CustomCell";
     self.tableView.tableFooterView = [UIView new];
 }
 
+//- (void) configCollection {
+    
+//}
 
 
 - (void)didReceiveMemoryWarning {
@@ -61,6 +65,7 @@ static NSString* identifierCell = @"CustomCell";
             NSLog(@"AUTHORIZED");
             NSLog(@"%@ %@", user.firstName, user.lastName);
             [self getFriendsFromServer];
+            
             //
         }];
     }
@@ -75,9 +80,9 @@ static NSString* identifierCell = @"CustomCell";
 -(void) getFriendsFromServer {
     
     [[ASServerManager sharedManager]
-     getFriendsWithOffset:[self.friendsArray count]
+     getFriendsWithOffset:0
      count:0
-     onSuccess:^(NSArray *friends) {
+     onSuccess:^(NSArray *friends) { //мы получили аргумент friends и используем его в исполнении блока, в случае успеха 
 
          
          [self.friendsArray addObjectsFromArray:friends];
@@ -109,13 +114,14 @@ static NSString* identifierCell = @"CustomCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [self.friendsArray count];
-}
+   return [self.friendsArray count];
+   }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    //static NSString* identifier = @"Cell";
+ 
+    
     
     
     CustomCell* cell = [tableView dequeueReusableCellWithIdentifier:identifierCell];
@@ -126,12 +132,28 @@ static NSString* identifierCell = @"CustomCell";
     
     ASUser* friend = [self.friendsArray objectAtIndex:indexPath.row];
     NSLog(@"%@", friend.firstName);
+    NSLog(@"%@", friend.user_id);
+    
+    
 
     [cell setCustomCellWith:friend];
     
     
     
     return cell;
+}
+
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"SegueToCollectionView" sender:self];
+    //NSLog(@"YOR ROW IS %ld", (long)indexPath.row);
+    ASUser* friend = [self.friendsArray objectAtIndex:indexPath.row];
+    //NSLog(@"%@", friend.firstName);
+    //NSLog(@"%@", friend.user_id);
+    [ID sharedID].idToCollection = friend.user_id;
+
 }
 
 @end

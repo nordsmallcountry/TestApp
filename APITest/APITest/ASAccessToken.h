@@ -14,6 +14,9 @@
 
 @property (strong, nonatomic) NSDate* expirationDate;
 
-@property (strong, nonatomic) NSString* userID; 
+@property (strong, nonatomic) NSString* userID;
+
+
++ (instancetype)sharedToken;
 
 @end

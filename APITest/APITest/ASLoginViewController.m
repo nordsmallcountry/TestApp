@@ -104,7 +104,7 @@
     
         if ([[[request URL] host] isEqualToString:@"hello.there"]) { //если редирект  равен hello.there
         
-        ASAccessToken* token = [[ASAccessToken alloc] init]; //объявляем объект token класса ACAcess.., у которого есть три properties
+       // ASAccessToken* token = [[ASAccessToken alloc] init]; //объявляем объект token класса ACAcess.., у которого есть три properties
         
         NSString* query = [[request URL] description];
         
@@ -127,16 +127,16 @@
                 
                 NSString* key = [values firstObject];//копируем первый элемент
                 if ([key isEqualToString:@"access_token"]) {//и если он равен "access_token"
-                    token.token = [values lastObject];//сохраняем токен
-                    
+                    [ASAccessToken sharedToken].token = [values lastObject];//сохраняем токен
+                    NSLog(@"!!!!!!!!!!!!!!!!!!!!!!!!!!!       !!!!!!   !!!%@", [ASAccessToken sharedToken].token);
                 } else if ([key isEqualToString:@"expires_in"]) {
                     
                     NSTimeInterval interval = [[values lastObject] doubleValue];//
                     
-                    token.expirationDate = [NSDate dateWithTimeIntervalSinceNow:interval];//сохраняем время действия токена
+                    [ASAccessToken sharedToken].expirationDate = [NSDate dateWithTimeIntervalSinceNow:interval];//сохраняем время действия токена
                 } else if ([key isEqualToString:@"user_id"]) {
                     
-                    token.userID = [values lastObject];//сохраняем ID пользователя
+                    [ASAccessToken sharedToken].userID = [values lastObject];//сохраняем ID пользователя
                     
                 }
                 
@@ -147,7 +147,7 @@
         
         if (self.completionBlock){
             
-            self.completionBlock(token);
+            self.completionBlock([ASAccessToken sharedToken]);
             
         }
         
@@ -155,8 +155,8 @@
                                  completion:nil]; //убирает asloginviewcontroller
         
         
-         return NO;
-        
+         //return NO;
+            
         }
     return YES;
 }

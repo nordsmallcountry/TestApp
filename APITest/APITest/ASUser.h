@@ -18,6 +18,9 @@
 
 @property (strong, nonatomic) NSURL* imageURL;
 
+@property (strong, nonatomic) NSString* user_id;
+
 -(id) initWithServerResponse: (NSDictionary*) responseObject;
+-(id) initWithServerResponse2: (NSDictionary*) responseObject;
 
 @end

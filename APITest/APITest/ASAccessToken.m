@@ -10,4 +10,14 @@
 
 @implementation ASAccessToken
 
++ (instancetype)sharedToken {
+    static ASAccessToken* sharedInstance;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[ASAccessToken alloc] init];
+    });
+    return sharedInstance;
+}
+
+
 @end

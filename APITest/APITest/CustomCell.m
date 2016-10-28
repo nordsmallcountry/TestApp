@@ -43,19 +43,19 @@
         
         
     } else self.onlineView.hidden = NO;
-
-        
-    CustomCell* cell1 = self;
+    
+    
+    
     dispatch_async(dispatch_get_main_queue(), ^{
-    [cell1.avatar sd_setImageWithURL:user.imageURL
+    [self.avatar sd_setImageWithURL:user.imageURL
                        placeholderImage:[UIImage imageNamed:@"placeholder.png"]
                               completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                                   
-                                  cell1.avatar.image = image;
+                                  self.avatar.image = image;
                                  
                                   
-                                  cell1.avatar.layer.cornerRadius = CGRectGetWidth(cell1.avatar.frame) / 2;
-                                  cell1.avatar.clipsToBounds = YES;
+                                  self.avatar.layer.cornerRadius = CGRectGetWidth(self.avatar.frame) / 2;
+                                  self.avatar.clipsToBounds = YES;
                               }];
     });
 }

@@ -16,6 +16,7 @@
     if (self) {
         self.firstName = [responseObject objectForKey:@"first_name"];
         self.lastName = [responseObject objectForKey:@"last_name"];
+        self.user_id = [responseObject objectForKey: @"user_id"];
         //self.online = [responseObject objectForKey:@"online"];
         self.online = [responseObject[@"online"] isEqual:@true] ? true : false;
         NSString* urlString = [responseObject objectForKey:@"photo_50"];
@@ -32,6 +33,23 @@
     return self;
 }
 
+- (id)initWithServerResponse2: (NSDictionary*) responseObject {
+    self = [super init];
+    if (self) {
+        if (responseObject[@"src"]) {
+        NSString* urlString = [responseObject objectForKey:@"src"];
+        //self.imageURL = ([responseObject[@"photo_100"] isEqual:[NSNull null]]) ? nil : responseObject[@"photo_100"];
+        
+        
+        if(urlString) {
+            self.imageURL = [NSURL URLWithString:urlString];
+        }
+        
+        }
+    }
+    
+    return self;
+}
 
 
 @end
