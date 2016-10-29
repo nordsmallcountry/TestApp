@@ -1,40 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CustomImageCell">
-            <rect key="frame" x="0.0" y="0.0" width="99" height="64"/>
+            <rect key="frame" x="0.0" y="0.0" width="94" height="85"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="99" height="64"/>
+                <rect key="frame" x="0.0" y="0.0" width="94" height="85"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AZk-z0-tfa">
-                        <rect key="frame" x="-8" y="8" width="115" height="56"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="AZk-z0-tfa">
+                        <rect key="frame" x="-3" y="0.0" width="97" height="85"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                 </subviews>
             </view>
-            <constraints>
-                <constraint firstItem="AZk-z0-tfa" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leadingMargin" constant="-16" id="KZH-To-A59"/>
-                <constraint firstAttribute="trailingMargin" secondItem="AZk-z0-tfa" secondAttribute="trailing" constant="-16" id="NZb-S6-n6g"/>
-                <constraint firstItem="AZk-z0-tfa" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="topMargin" id="ejD-Rx-Yh3"/>
-                <constraint firstAttribute="bottom" secondItem="AZk-z0-tfa" secondAttribute="bottom" id="sad-Sp-qU9"/>
-            </constraints>
-            <size key="customSize" width="99" height="64"/>
+            <size key="customSize" width="94" height="85"/>
             <connections>
                 <outlet property="avatar2" destination="AZk-z0-tfa" id="VJJ-UA-v7p"/>
             </connections>
-            <point key="canvasLocation" x="34.5" y="63"/>
+            <point key="canvasLocation" x="32" y="52.5"/>
         </collectionViewCell>
     </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
 </document>

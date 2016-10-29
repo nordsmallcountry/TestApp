@@ -58,9 +58,6 @@
                                  self.avatar.layer.cornerRadius = CGRectGetWidth(self.avatar.frame) / 2;
                                  self.avatar.clipsToBounds = YES;
                                   
-                                  if(self.avatar.image != nil) {
-                                      NSLog(@"ITS TRUE, THERE IS AN IMAGE");
-                                  } else NSLog(@"OH SHIT, WE GOT A PROBLEM HERE");
                                   
                               }];
     });

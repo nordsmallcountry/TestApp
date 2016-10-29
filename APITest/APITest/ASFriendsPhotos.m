@@ -27,9 +27,13 @@ static NSString*  reuseIdentifier = @"CustomImageCell";
     // Uncomment the following line to preserve selection between presentations
     //self.clearsSelectionOnViewWillAppear = NO;
     
+    //[self.collectionView initWithNibName:(nullable NSString *)nibNameOrNil bundle:(nullable NSBundle *)nibBundleOrNil]
+    
     
     [self.collectionView registerClass:[CustomImageCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
+    [self.collectionView registerNib:[UINib nibWithNibName:reuseIdentifier bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
+
 
     
     self.photosArray = [NSMutableArray array];
@@ -89,13 +93,10 @@ static NSString*  reuseIdentifier = @"CustomImageCell";
     NSLog(@"%ld", (long)indexPath.item);
     NSLog(@"%@", photo1.imageURL);
     
-   
-    
-    
         [cell setCustomCellWith:photo1];
     
 
-    
+   // cell.highlighted = YES;
     return cell;
 }
 
@@ -129,8 +130,11 @@ static NSString*  reuseIdentifier = @"CustomImageCell";
 	
  }
  */
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionView *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 3; // This is the minimum inter item spacing, can be more
+}
 
 
-     
 
 @end

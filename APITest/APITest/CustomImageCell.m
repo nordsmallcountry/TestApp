@@ -14,10 +14,10 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 
 - (void) setCustomCellWith: (Photo*) photo {
+    
     
    dispatch_async(dispatch_get_main_queue(), ^{
         [self.avatar2 sd_setImageWithURL:photo.imageURL
@@ -25,12 +25,9 @@
                               completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                                   
                                   self.avatar2.image = image;
-                                  if(self.avatar2.image != nil) {
-                                      NSLog(@"ITS TRUE, THERE IS AN OTHER IMAGE");
-                                  } else NSLog(@"OH SHIT, WE GOT A PROBLEM HERE");
                                   
                                   //self.imageCellCollection.layer.cornerRadius = CGRectGetWidth(self.imageCellCollection.frame) / 2;
-                                  //self.imageView.clipsToBounds = YES;
+                                  self.avatar2.clipsToBounds = YES;
                               }];
     });
    

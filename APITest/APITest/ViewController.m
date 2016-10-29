@@ -150,8 +150,7 @@ static NSString* identifierCell = @"CustomCell";
     [self performSegueWithIdentifier:@"SegueToCollectionView" sender:self];
     //NSLog(@"YOR ROW IS %ld", (long)indexPath.row);
     ASUser* friend = [self.friendsArray objectAtIndex:indexPath.row];
-    //NSLog(@"%@", friend.firstName);
-    //NSLog(@"%@", friend.user_id);
+
     [ID sharedID].idToCollection = friend.user_id;
 
 }
