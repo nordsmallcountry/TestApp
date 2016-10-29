@@ -14,6 +14,7 @@
 #import "ViewController.h"
 #import "ID.h"
 #import "ASAccessToken.h"
+#import "Photo.h"
 
 static NSString* userGlobalID = @"123";
 
@@ -173,7 +174,6 @@ static NSString* userGlobalID = @"123";
         
         if(failure) {
             failure(error, operation.response.statusCode);
-            NSLog(@"ITS FAIL BRO!");
         }
     }];
     
@@ -223,8 +223,8 @@ static NSString* userGlobalID = @"123";
         
         for (NSDictionary* dict in resp) {
             
-            ASUser* user = [[ASUser alloc]initWithServerResponse2:dict];
-            [objectsArray addObject:user];
+            Photo* photo = [[Photo alloc]initWithPhotoResponse:dict];
+            [objectsArray addObject:photo];
         }
         
         if(success) {
@@ -235,7 +235,6 @@ static NSString* userGlobalID = @"123";
         
         if(failure) {
             failure(error, operation.response.statusCode);
-            NSLog(@"ITS FAIL BRO!");
         }
     }];
     

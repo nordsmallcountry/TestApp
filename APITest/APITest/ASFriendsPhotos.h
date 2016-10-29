@@ -10,4 +10,5 @@
 
 @interface ASFriendsPhotos : UICollectionViewController <UICollectionViewDataSource>
 
+
 @end

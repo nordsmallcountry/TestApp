@@ -10,6 +10,7 @@
 #import "ASUser.h"
 #import "UIImageView+AFNetworking.h"
 #import "UIImageView+WebCache.h"
+
 @implementation CustomCell
 
 - (void)awakeFromNib {
@@ -54,8 +55,13 @@
                                   self.avatar.image = image;
                                  
                                   
-                                  self.avatar.layer.cornerRadius = CGRectGetWidth(self.avatar.frame) / 2;
-                                  self.avatar.clipsToBounds = YES;
+                                 self.avatar.layer.cornerRadius = CGRectGetWidth(self.avatar.frame) / 2;
+                                 self.avatar.clipsToBounds = YES;
+                                  
+                                  if(self.avatar.image != nil) {
+                                      NSLog(@"ITS TRUE, THERE IS AN IMAGE");
+                                  } else NSLog(@"OH SHIT, WE GOT A PROBLEM HERE");
+                                  
                               }];
     });
 }

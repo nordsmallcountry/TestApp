@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ASUser.h"
+@class Photo;
 
 @interface CustomImageCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView* imageView;
+@property (weak, nonatomic) IBOutlet UIImageView *avatar2;
 
-- (void) setCustomImageCellWith: (ASUser*) user ;
+- (void) setCustomCellWith: (Photo*) photo ;
 
 @end

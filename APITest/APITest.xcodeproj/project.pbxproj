@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		5F2F451C1DC36C8000913393 /* CustomImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F451A1DC36C8000913393 /* CustomImageCell.m */; };
 		5F2F451D1DC36C8000913393 /* CustomImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F2F451B1DC36C8000913393 /* CustomImageCell.xib */; };
-		5F2F45201DC3824700913393 /* IndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F451F1DC3824700913393 /* IndexPath.m */; };
+		5F2F45231DC4CBF100913393 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F45221DC4CBF100913393 /* Photo.m */; };
+		5F2F45251DC4E63600913393 /* ASFriendsPhotos.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F2F45241DC4E63600913393 /* ASFriendsPhotos.xib */; };
 		5F32AEC11DBF3953006D2312 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F32AEC01DBF3953006D2312 /* placeholder.png */; };
 		5F40A3741DBC718B00EE6BC9 /* ASLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F40A3731DBC718B00EE6BC9 /* ASLoginViewController.m */; };
 		5F40A3771DBC74B400EE6BC9 /* ASAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F40A3761DBC74B400EE6BC9 /* ASAccessToken.m */; };
@@ -23,7 +24,6 @@
 		5F6AD2551DB9E92E0022B7F0 /* ASServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6AD2541DB9E92E0022B7F0 /* ASServerManager.m */; };
 		5F6C787E1DBD4A58002C2F7F /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6C787D1DBD4A58002C2F7F /* FirstViewController.m */; };
 		5FC91F6C1DC24A69002EBB3A /* ASFriendsPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC91F6A1DC24A69002EBB3A /* ASFriendsPhotos.m */; };
-		5FC91F6D1DC24A69002EBB3A /* ASFriendsPhotos.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FC91F6B1DC24A69002EBB3A /* ASFriendsPhotos.xib */; };
 		5FC91F751DC27119002EBB3A /* ID.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC91F741DC27119002EBB3A /* ID.m */; };
 		5FF4DF051DBD4EB300E7C091 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FF4DF031DBD4EB300E7C091 /* LaunchScreen.storyboard */; };
 		5FF4DF061DBD4EB300E7C091 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FF4DF041DBD4EB300E7C091 /* Main.storyboard */; };
@@ -62,8 +62,9 @@
 		5F2F45191DC36C8000913393 /* CustomImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomImageCell.h; sourceTree = "<group>"; };
 		5F2F451A1DC36C8000913393 /* CustomImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomImageCell.m; sourceTree = "<group>"; };
 		5F2F451B1DC36C8000913393 /* CustomImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomImageCell.xib; sourceTree = "<group>"; };
-		5F2F451E1DC3824700913393 /* IndexPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexPath.h; sourceTree = "<group>"; };
-		5F2F451F1DC3824700913393 /* IndexPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexPath.m; sourceTree = "<group>"; };
+		5F2F45211DC4CBF100913393 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		5F2F45221DC4CBF100913393 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		5F2F45241DC4E63600913393 /* ASFriendsPhotos.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ASFriendsPhotos.xib; sourceTree = "<group>"; };
 		5F32AEC01DBF3953006D2312 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		5F40A3721DBC718B00EE6BC9 /* ASLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASLoginViewController.h; sourceTree = "<group>"; };
 		5F40A3731DBC718B00EE6BC9 /* ASLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASLoginViewController.m; sourceTree = "<group>"; };
@@ -91,7 +92,6 @@
 		5F6C787D1DBD4A58002C2F7F /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		5FC91F691DC24A69002EBB3A /* ASFriendsPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASFriendsPhotos.h; sourceTree = "<group>"; };
 		5FC91F6A1DC24A69002EBB3A /* ASFriendsPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASFriendsPhotos.m; sourceTree = "<group>"; };
-		5FC91F6B1DC24A69002EBB3A /* ASFriendsPhotos.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ASFriendsPhotos.xib; sourceTree = "<group>"; };
 		5FC91F731DC27119002EBB3A /* ID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ID.h; sourceTree = "<group>"; };
 		5FC91F741DC27119002EBB3A /* ID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ID.m; sourceTree = "<group>"; };
 		5FF4DF031DBD4EB300E7C091 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -199,21 +199,21 @@
 				5F6AD2541DB9E92E0022B7F0 /* ASServerManager.m */,
 				5F559C991DBB0787009C55C6 /* ASUser.h */,
 				5F559C9A1DBB0788009C55C6 /* ASUser.m */,
+				5F2F45211DC4CBF100913393 /* Photo.h */,
+				5F2F45221DC4CBF100913393 /* Photo.m */,
 				5F40A3751DBC74B400EE6BC9 /* ASAccessToken.h */,
 				5F40A3761DBC74B400EE6BC9 /* ASAccessToken.m */,
 				5F40A3721DBC718B00EE6BC9 /* ASLoginViewController.h */,
 				5F40A3731DBC718B00EE6BC9 /* ASLoginViewController.m */,
+				5FC91F691DC24A69002EBB3A /* ASFriendsPhotos.h */,
+				5FC91F6A1DC24A69002EBB3A /* ASFriendsPhotos.m */,
+				5F2F45241DC4E63600913393 /* ASFriendsPhotos.xib */,
 				5FF4DF071DBD50C700E7C091 /* CustomCell.h */,
 				5FF4DF081DBD50C700E7C091 /* CustomCell.m */,
 				5FF4DF091DBD50C700E7C091 /* CustomCell.xib */,
-				5FC91F691DC24A69002EBB3A /* ASFriendsPhotos.h */,
-				5FC91F6A1DC24A69002EBB3A /* ASFriendsPhotos.m */,
-				5FC91F6B1DC24A69002EBB3A /* ASFriendsPhotos.xib */,
 				5F2F45191DC36C8000913393 /* CustomImageCell.h */,
 				5F2F451A1DC36C8000913393 /* CustomImageCell.m */,
 				5F2F451B1DC36C8000913393 /* CustomImageCell.xib */,
-				5F2F451E1DC3824700913393 /* IndexPath.h */,
-				5F2F451F1DC3824700913393 /* IndexPath.m */,
 				5FF4DF031DBD4EB300E7C091 /* LaunchScreen.storyboard */,
 				5FF4DF041DBD4EB300E7C091 /* Main.storyboard */,
 				5F40A4171DBCF28600EE6BC9 /* Base.lproj */,
@@ -367,12 +367,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F2F45251DC4E63600913393 /* ASFriendsPhotos.xib in Resources */,
 				5FF4DF061DBD4EB300E7C091 /* Main.storyboard in Resources */,
 				5F2F451D1DC36C8000913393 /* CustomImageCell.xib in Resources */,
 				5F6AD1FA1DB9D9400022B7F0 /* Assets.xcassets in Resources */,
 				5FF4DF0B1DBD50C700E7C091 /* CustomCell.xib in Resources */,
 				5F32AEC11DBF3953006D2312 /* placeholder.png in Resources */,
-				5FC91F6D1DC24A69002EBB3A /* ASFriendsPhotos.xib in Resources */,
 				5FF4DF051DBD4EB300E7C091 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,9 +536,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F2F45231DC4CBF100913393 /* Photo.m in Sources */,
 				5FC91F6C1DC24A69002EBB3A /* ASFriendsPhotos.m in Sources */,
 				5F6C787E1DBD4A58002C2F7F /* FirstViewController.m in Sources */,
-				5F2F45201DC3824700913393 /* IndexPath.m in Sources */,
 				5F2F451C1DC36C8000913393 /* CustomImageCell.m in Sources */,
 				5F6AD1F51DB9D9400022B7F0 /* ViewController.m in Sources */,
 				5F6AD1F21DB9D9400022B7F0 /* AppDelegate.m in Sources */,

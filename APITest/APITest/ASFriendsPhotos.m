@@ -10,34 +10,30 @@
 #import "ASServerManager.h"
 #import "ID.h"
 #import "CustomImageCell.h"
-#import "IndexPath.h"
-#import "ASUser.h"
+#import "Photo.h"
 @interface ASFriendsPhotos ()
 @property (strong, nonatomic) NSMutableArray* photosArray;
 
-@property (assign, nonatomic) NSInteger itemCount;
-
 @end
 
-@implementation ASFriendsPhotos
-static int im = 0;
 
-static NSString * const reuseIdentifier = @"FriendsPhotosCell";
+@implementation ASFriendsPhotos
+
+static NSString*  reuseIdentifier = @"CustomImageCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _itemCount = 0;
     // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
+    //self.clearsSelectionOnViewWillAppear = NO;
     
-    // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    
+    [self.collectionView registerClass:[CustomImageCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
 
     
     self.photosArray = [NSMutableArray array];
-   [self getPhotosFromServer];
+   
     
     
 }
@@ -48,83 +44,59 @@ static NSString * const reuseIdentifier = @"FriendsPhotosCell";
 }
 
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self getPhotosFromServer];
+}
+
+
 -(void) getPhotosFromServer {
     [[ASServerManager sharedManager]
      getPhotosWithOffset:[self.photosArray count]
-     count:900
+     count:150
      onSuccess:^(NSArray* photos)
      {
-         
          [self.photosArray addObjectsFromArray:photos];
-        
-         NSMutableArray* newPaths = [NSMutableArray array];
-         
-             
-         for (int i = (int)[self.photosArray count] - (int)[photos count] ; i < [self.photosArray count];i++) { //FIX
-             
-                 [newPaths addObject: [NSIndexPath indexPathForItem:i inSection:1]];
-             
-             }
-        // NSIndexPath* cruser = [[NSIndexPath alloc]init];
-         //NSArray* contentCruser = [NSArray arrayWithObjects:cruser, nil];
-         
-             //[self.collectionView insertItemsAtIndexPaths:newPaths];
-        
-         //@catch (NSException *exception) {}
-         
-         //[self.collectionView insertItemsAtIndexPaths: contentCruser];
 
          [self.collectionView reloadData];
-   
-         //[self.collectionView reloadItemsAtIndexPaths:newPaths];
-         
-         
-         
-             
      }
-     
-       
-     
-     
      onFailure:^(NSError *error, NSInteger statusCode) {
          
          NSLog(@"error = %@, code = %ld", [error localizedDescription], statusCode);
-     }
-    
-     ];
+     }];
 }
 
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
 #warning Incomplete implementation, return the number of sections
-    NSLog(@"%ld",  (long)[self.photosArray count]);
-    return [self.photosArray count];
+    //NSLog(@"%ld",  (long)[self.photosArray count]);
+    return 1;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of items
-    return 1;
+    return [self.photosArray count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-   // UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-     CustomImageCell* cell1 = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath
+     CustomImageCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath
 ];
-    
-    ASUser* photo1 = [self.photosArray objectAtIndex:indexPath.item];
-    NSLog(@"%ld", (long)im);
+    Photo* photo1 = [self.photosArray objectAtIndex:indexPath.item];
+    NSLog(@"%ld", (long)indexPath.item);
     NSLog(@"%@", photo1.imageURL);
-    //self.itemCount++;
-    im++;
+    
+   
     
     
-    //[cell1 setCustomImageCellWith:photo1];
+        [cell setCustomCellWith:photo1];
     
+
     
-    return cell1;
+    return cell;
 }
 
 #pragma mark <UICollectionViewDelegate>

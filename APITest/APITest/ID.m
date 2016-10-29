@@ -18,13 +18,5 @@
     });
     return sharedInstance;
 }
-/*
-- (id)init {
-    self = [super init];
-    if (self) {
-        self.idToCollection = [[NSDate date] timeIntervalSince1970];
-    }
-    return self;
-}
-*/
+
 @end

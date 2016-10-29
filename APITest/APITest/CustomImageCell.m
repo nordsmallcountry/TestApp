@@ -9,6 +9,7 @@
 #import "CustomImageCell.h"
 #import "UIImageView+AFNetworking.h"
 #import "UIImageView+WebCache.h"
+#import "Photo.h"
 @implementation CustomImageCell
 
 - (void)awakeFromNib {
@@ -16,20 +17,26 @@
     // Initialization code
 }
 
-- (void) setCustomImageCellWith: (ASUser*) user {
+- (void) setCustomCellWith: (Photo*) photo {
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.imageView sd_setImageWithURL:user.imageURL
+   dispatch_async(dispatch_get_main_queue(), ^{
+        [self.avatar2 sd_setImageWithURL:photo.imageURL
                        placeholderImage:[UIImage imageNamed:@"placeholder.png"]
                               completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                                   
-                                  self.imageView.image = image;
-                                  
+                                  self.avatar2.image = image;
+                                  if(self.avatar2.image != nil) {
+                                      NSLog(@"ITS TRUE, THERE IS AN OTHER IMAGE");
+                                  } else NSLog(@"OH SHIT, WE GOT A PROBLEM HERE");
                                   
                                   //self.imageCellCollection.layer.cornerRadius = CGRectGetWidth(self.imageCellCollection.frame) / 2;
-                                  self.imageView.clipsToBounds = YES;
+                                  //self.imageView.clipsToBounds = YES;
                               }];
     });
+   
+    
+    
+    
 }
 
 @end
